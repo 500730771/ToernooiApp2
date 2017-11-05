@@ -2,10 +2,11 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/GamesBackLog.iml" filepath="$PROJECT_DIR$/GamesBackLog.iml" />
+      <module fileurl="file://C:\Users\Melanie\Documents\#HvA\Semester 5\Mobile application development\toernooi\GamesBackLog.iml" filepath="C:\Users\Melanie\Documents\#HvA\Semester 5\Mobile application development\toernooi\GamesBackLog.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
-      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
-      <module fileurl="file://$PROJECT_DIR$/gamesbacklog-master.iml" filepath="$PROJECT_DIR$/gamesbacklog-master.iml" />
+      <module fileurl="file://C:\Users\Melanie\Documents\#HvA\Semester 5\Mobile application development\toernooi\gamesbacklog-master.iml" filepath="C:\Users\Melanie\Documents\#HvA\Semester 5\Mobile application development\toernooi\gamesbacklog-master.iml" />
+      <module fileurl="file://C:\Users\Melanie\Documents\#HvA\Semester 5\Mobile application development\toernooi\gamesbacklogmanager.iml" filepath="C:\Users\Melanie\Documents\#HvA\Semester 5\Mobile application development\toernooi\gamesbacklogmanager.iml" />
+      <module fileurl="file://$PROJECT_DIR$/toernooi.iml" filepath="$PROJECT_DIR$/toernooi.iml" />
     </modules>
   </component>
 </project>

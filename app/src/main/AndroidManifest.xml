@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.test.gamesbacklog">
+    package="com.example.test.toernooi">
 
     <application
         android:allowBackup="true"
@@ -20,17 +20,21 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".activity.AddGameActivity"
-            android:label="@string/title_activity_add_game"
+            android:name=".activity.AddToernooiActivity"
+            android:label="@string/title_activity_add_toernooi"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".activity.GameDetailsActivity"
-            android:label="@string/title_activity_game_details"
+            android:name=".activity.ToernooiDetailsActivity"
+            android:label="@string/title_activity_toernooi_details"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".activity.ModifyGameActivity"
-            android:label="@string/title_activity_modify_game"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:name=".activity.ModifyToernooiActivity"
+            android:label="@string/title_activity_modify_toernooi"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".activity.AddSpelerActivity"
+            android:label="@string/title_activity_add_speler"
+            android:theme="@style/AppTheme.NoActionBar" />
     </application>
 
 </manifest>
