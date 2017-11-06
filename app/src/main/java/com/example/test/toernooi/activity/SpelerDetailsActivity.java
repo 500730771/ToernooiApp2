@@ -13,39 +13,38 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.test.toernooi.R;
-import com.example.test.toernooi.model.Toernooi;
-import com.example.test.toernooi.utility.ConfirmDeleteDialog;
 import com.example.test.toernooi.data.DataSource;
+import com.example.test.toernooi.model.Speler;
+import com.example.test.toernooi.utility.ConfirmDeleteDialog;
 
-/**
- * Created by Melanie on 15-10-2017.
- */
-public class ToernooiDetailsActivity extends AppCompatActivity
-        implements ConfirmDeleteDialog.ConfirmDeleteDialogListener
-{
+public class SpelerDetailsActivity extends AppCompatActivity implements ConfirmDeleteDialog.ConfirmDeleteDialogListener {
 
-    private Toernooi toernooi;
-    private TextView mtoernooiNaam;
-    private TextView mtoernooiDatum;
+    private Speler speler;
+    private TextView mSpelerNaam;
+    private TextView mSpelerGeboortedatum;
+    private TextView mSpelerClub;
+    private TextView mSpelerSoortlid;
+    private TextView mSpelerSpeelsterkte;
+    private TextView mSpelerCompetitie;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_toernooi_details);
+        setContentView(R.layout.activity_speler_details);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        //Get the toernooi from the intent, which was passed as parameter
-        this.toernooi = (Toernooi) getIntent().getSerializableExtra("selectedToernooi");
-        setToernooiViews();
 
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.action_modify_game);
+        this.speler = (Speler) getIntent().getSerializableExtra("selectedSpeler");
+        setSpelerViews();
+
+        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener()
         {
             @Override
             public void onClick(View view)
             {
-                Intent intent = new Intent(ToernooiDetailsActivity.this, ModifyToernooiActivity.class);
-                intent.putExtra("selectedToernooi", toernooi);
+                Intent intent = new Intent(SpelerDetailsActivity.this, ModifySpelerActivity.class);
+//                intent.putExtra("selectedSpeler", speler);
                 startActivityForResult(intent, 1000);
             }
         });
@@ -55,19 +54,26 @@ public class ToernooiDetailsActivity extends AppCompatActivity
     protected void onActivityResult(int requestCode, int resultCode, Intent data)
     {
         super.onActivityResult(requestCode, resultCode, data);
-        //Set the Game Card with updated toernooi
-        toernooi = (Toernooi) data.getSerializableExtra("selectedToernooi");
-        setToernooiViews();
+        //Set the Speler Card with updated speler
+        speler = (Speler) data.getSerializableExtra("selectedSpeler");
+        setSpelerViews();
     }
 
 
-    public void setToernooiViews() {
-        //
-        mtoernooiNaam = (TextView) findViewById(R.id.toernooiNaam);
-        mtoernooiDatum = (TextView) findViewById(R.id.toernooiDatum);
+    public void setSpelerViews() {
+        mSpelerNaam = (TextView) findViewById(R.id.spelerNaam);
+        mSpelerGeboortedatum = (TextView) findViewById(R.id.spelerGeboortedatum);
+        mSpelerClub = (TextView) findViewById(R.id.spelerClub);
+        mSpelerSoortlid = (TextView) findViewById(R.id.spelerSoortLid);
+        mSpelerSpeelsterkte = (TextView) findViewById(R.id.spelerSpeelsterkte);
+        mSpelerCompetitie = (TextView) findViewById(R.id.spelerCompetite);
 
-        mtoernooiNaam.setText(toernooi.getNaam().toString());
-        mtoernooiDatum.setText(toernooi.getDatum().toString());
+        mSpelerNaam.setText(speler.getNaam().toString());
+        mSpelerGeboortedatum.setText(speler.getGeboortedatum().toString());
+        mSpelerClub.setText(speler.getClub().toString());
+        mSpelerSoortlid.setText(speler.getSoortLid().toString());
+        mSpelerSpeelsterkte.setText(speler.getSpeelsterkte().toString());
+        mSpelerCompetitie.setText(speler.getCompetitie().toString());
     }
 
     @Override
@@ -77,29 +83,28 @@ public class ToernooiDetailsActivity extends AppCompatActivity
         return true;
     }
 
-
-    @Override
+//    @Override
     public void onDialogPositiveClick(android.app.DialogFragment dialog)
     {
-        //User clicked on the confirm button of the Dialog, delete the toernooi from Database
+        //User clicked on the confirm button of the Dialog, delete the speler from Database
         DataSource datasource = new DataSource(this);
-        //We only need the id of the toernooi to delete it
-        datasource.deleteToernooi(toernooi.getId());
+        //We only need the id of the speler to delete it
+        datasource.deleteSpeler(speler.getId());
         //Game has been deleted, go back to the MainActivity
-        showGameDeletedToast();
+        showSpelerDeletedToast();
         finish();
     }
 
-    @Override
+//    @Override
     public void onDialogNegativeClick(android.app.DialogFragment dialog)
     {
         //Do nothing, Dialog will disappear
     }
 
-    private void showGameDeletedToast()
+    private void showSpelerDeletedToast()
     {
         Context context = getApplicationContext();
-        String text = String.format("%s %s", toernooi.getNaam(), getString(R.string.toernooi_deleted));
+        String text = String.format("%s %s", speler.getNaam(), getString(R.string.spelers_deleted));
         int duration = Toast.LENGTH_SHORT;
         Toast toast = Toast.makeText(context, text, duration);
         toast.show();
@@ -121,4 +126,5 @@ public class ToernooiDetailsActivity extends AppCompatActivity
         }
         return super.onOptionsItemSelected(item);
     }
+
 }

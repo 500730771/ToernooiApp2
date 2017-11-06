@@ -5,6 +5,7 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 
+import com.example.test.toernooi.model.Speler;
 import com.example.test.toernooi.model.Toernooi;
 
 import java.util.ArrayList;
@@ -48,8 +49,8 @@ public class DataSource {
         mDBHelper.close();
     }
 
+    //TOERNOOI
     public void saveToernooi(Toernooi toernooi) {
-
         // Open connection to write data
         open();
         ContentValues values = new ContentValues();
@@ -84,7 +85,6 @@ public class DataSource {
                 ToernooiContract.ToernooiEntry.COLUMN_NAME_DATUM +
                 " FROM " + ToernooiContract.ToernooiEntry.TABLE_NAME;
 
-        //User user = new User();
         List<Toernooi> toernooiList = new ArrayList<>();
         Cursor cursor = mDatabase.rawQuery(selectQuery, null);
 
@@ -117,4 +117,88 @@ public class DataSource {
         close();
     }
 
+    //SPELER
+    public void saveSpeler(Speler speler) {
+        // Open connection to write data
+        open();
+        ContentValues values = new ContentValues();
+        values.put(SpelerContract.SpelerEntry.COLUMN_NAME_NAAM, speler.getNaam());
+        values.put(SpelerContract.SpelerEntry.COLUMN_NAME_GEBOORTEDATUM, speler.getGeboortedatum());
+        values.put(SpelerContract.SpelerEntry.COLUMN_NAME_CLUB, speler.getClub());
+        values.put(SpelerContract.SpelerEntry.COLUMN_NAME_SOORT_LID, speler.getSoortLid());
+        values.put(SpelerContract.SpelerEntry.COLUMN_NAME_SPEELSTERKTE, speler.getSpeelsterkte());
+        values.put(SpelerContract.SpelerEntry.COLUMN_NAME_COMPETITIE, speler.getCompetitie());
+        // Inserting Row
+        mDatabase.insert(SpelerContract.SpelerEntry.TABLE_NAME, null, values);
+        close(); // Closing database connection
+    }
+
+    public void modifySpeler(Speler speler) {
+        open();
+        ContentValues values = new ContentValues();
+        values.put(SpelerContract.SpelerEntry.COLUMN_NAME_NAAM, speler.getNaam());
+        values.put(SpelerContract.SpelerEntry.COLUMN_NAME_GEBOORTEDATUM, speler.getGeboortedatum());
+        values.put(SpelerContract.SpelerEntry.COLUMN_NAME_CLUB, speler.getClub());
+        values.put(SpelerContract.SpelerEntry.COLUMN_NAME_SOORT_LID, speler.getSoortLid());
+        values.put(SpelerContract.SpelerEntry.COLUMN_NAME_SPEELSTERKTE, speler.getSpeelsterkte());
+        values.put(SpelerContract.SpelerEntry.COLUMN_NAME_COMPETITIE, speler.getCompetitie());
+
+        mDatabase.update(SpelerContract.SpelerEntry.TABLE_NAME, values, SpelerContract.SpelerEntry.COLUMN_NAME_ID + "= ?", new String[]{String.valueOf(speler.getId())});
+        mDatabase.close(); // Closing database connection
+    }
+
+    public Cursor getAllSpelers() {
+        return mDatabase.query(SpelerContract.SpelerEntry.TABLE_NAME, SPELER_ALL_COLUMNS, null, null, null, null, null);
+    }
+
+    public List<Speler> getSpelers()
+    {
+        mDatabase = mDBHelper.getReadableDatabase();
+
+        String selectQuery = "SELECT  " +
+                SpelerContract.SpelerEntry.COLUMN_NAME_ID + ',' +
+                SpelerContract.SpelerEntry.COLUMN_NAME_NAAM + ',' +
+                SpelerContract.SpelerEntry.COLUMN_NAME_GEBOORTEDATUM + ',' +
+                SpelerContract.SpelerEntry.COLUMN_NAME_CLUB + ',' +
+                SpelerContract.SpelerEntry.COLUMN_NAME_SOORT_LID + ',' +
+                SpelerContract.SpelerEntry.COLUMN_NAME_SPEELSTERKTE + ',' +
+                SpelerContract.SpelerEntry.COLUMN_NAME_COMPETITIE +
+                " FROM " + SpelerContract.SpelerEntry.TABLE_NAME;
+
+        List<Speler> spelerlist = new ArrayList<>();
+        Cursor cursor = mDatabase.rawQuery(selectQuery, null);
+
+        if (cursor.moveToFirst()) {
+            do {
+                Speler speler = new Speler();
+                speler.setId(cursor.getInt(cursor.getColumnIndex(SpelerContract.SpelerEntry.COLUMN_NAME_ID)));
+                speler.setNaam(cursor.getString(cursor.getColumnIndex(SpelerContract.SpelerEntry.COLUMN_NAME_NAAM)));
+                speler.setGeboortedatum(cursor.getString(cursor.getColumnIndex(SpelerContract.SpelerEntry.COLUMN_NAME_GEBOORTEDATUM)));
+                speler.setClub(cursor.getString(cursor.getColumnIndex(SpelerContract.SpelerEntry.COLUMN_NAME_CLUB)));
+                speler.setSoortLid(cursor.getString(cursor.getColumnIndex(SpelerContract.SpelerEntry.COLUMN_NAME_SOORT_LID)));
+                speler.setSpeelsterkte(cursor.getString(cursor.getColumnIndex(SpelerContract.SpelerEntry.COLUMN_NAME_SPEELSTERKTE)));
+                speler.setCompetitie(cursor.getString(cursor.getColumnIndex(SpelerContract.SpelerEntry.COLUMN_NAME_COMPETITIE)));
+
+                spelerlist.add(speler);
+            } while (cursor.moveToNext());
+        }
+        cursor.close();
+        close();
+        return spelerlist;
+    }
+
+    public void deleteSpeler(long user_Id) {
+        open();
+        // It's a good practice to use parameter ?, instead of concatenate string
+        mDatabase.delete(SpelerContract.SpelerEntry.TABLE_NAME, SpelerContract.SpelerEntry.COLUMN_NAME_ID + " =?",
+                new String[]{Long.toString(user_Id)});
+        close(); // Closing database connection
+    }
+
+    public void deleteAllSpelers()
+    {
+        open();
+        mDatabase.delete(SpelerContract.SpelerEntry.TABLE_NAME, null,null);
+        close();
+    }
 }

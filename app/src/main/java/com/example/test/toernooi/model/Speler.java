@@ -23,6 +23,10 @@ public class Speler {
         this.competitie = competitie;
     }
 
+    public Speler(){
+
+    }
+
     public int getId() {
         return id;
     }

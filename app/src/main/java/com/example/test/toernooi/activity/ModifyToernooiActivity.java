@@ -55,23 +55,12 @@ public class ModifyToernooiActivity extends AppCompatActivity
 
     private void setGameView() {
         //declare textfields
-        mToernooiNaam = (EditText)findViewById(R.id.toernooiNaam);
-        mToernooiDatum = (EditText)findViewById(R.id.toernooiDatum);
+        mToernooiNaam = (EditText) findViewById(R.id.toernooiNaam);
+        mToernooiDatum = (EditText) findViewById(R.id.toernooiDatum);
 
         mToernooiNaam.setText(toernooi.getNaam());
         mToernooiDatum.setText(toernooi.getDatum());
     }
-
-
-//    private void setSpinnerPosition(ArrayAdapter adapter){
-//        if (!toernooi.getGameStatus().equals(null)){
-//            //Gets the position of the correct spinner item by comparing
-//            //which item of the Spinner matches with the gameStatus
-//            int spinnerPosition = adapter.getPosition(toernooi.getGameStatus());
-//            //Display the correct gameStatus in the Spinner based on the found position
-//            statusSpinner.setSelection(spinnerPosition);
-//        }
-//    }
 
     void modifyToernooi() {
         // Get the input from the Views

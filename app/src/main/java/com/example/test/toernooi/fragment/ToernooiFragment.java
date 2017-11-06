@@ -40,12 +40,6 @@ public class ToernooiFragment extends Fragment {
 
     public View onCreate(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_toernooi, container, false);
-
-//        list = (RecyclerView) view.findViewById(R.id.list);
-//        RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(getActivity());
-//        list.setLayoutManager(mLayoutManager);
-//        list.setHasFixedSize(true);
-
         return view;
     }
 

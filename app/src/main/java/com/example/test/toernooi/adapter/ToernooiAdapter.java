@@ -74,7 +74,7 @@ public class ToernooiAdapter extends RecyclerView.Adapter<ToernooiAdapter.ViewHo
         @Override
         public void onClick(View view) {
             Intent intent = new Intent(context, ToernooiDetailsActivity.class);
-            // Get the correct game based on which listitem got clicked, and put it as parameter in the intent
+            // Get the correct toernooi based on which listitem got clicked, and put it as parameter in the intent
             Toernooi selectedToernooi = getItem(getAdapterPosition());
             intent.putExtra("selectedToernooi", selectedToernooi);
             // Open GameDetailsActivity

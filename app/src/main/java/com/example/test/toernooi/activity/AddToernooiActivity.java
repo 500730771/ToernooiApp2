@@ -34,15 +34,6 @@ public class AddToernooiActivity extends AppCompatActivity {
         mToernooiNaam = (EditText)findViewById(R.id.toernooiNaam);
         mToernooiDatum = (EditText)findViewById(R.id.toernooiDatum);
 
-        // Create an ArrayAdapter using the string array and a default spinner layout
-//        ArrayAdapter statusAdapter = ArrayAdapter.createFromResource(this,
-//                R.array.game_status, android.R.layout.simple_spinner_item);
-        // Specify the layout to use when the list of choices appears
-//        statusAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        //Set the com.example.test.gamesbacklog.adapter to the spinner
-//        statusSpinner.setAdapter(statusAdapter);
-
-
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {

@@ -17,10 +17,8 @@ import android.view.View;
 import android.widget.Toast;
 
 import com.example.test.toernooi.R;
-import com.example.test.toernooi.adapter.SpelerAdapter;
 import com.example.test.toernooi.adapter.ToernooiAdapter;
 import com.example.test.toernooi.data.DataSource;
-import com.example.test.toernooi.model.Speler;
 import com.example.test.toernooi.model.Toernooi;
 import com.example.test.toernooi.utility.ConfirmDeleteDialog;
 import com.facebook.stetho.Stetho;
@@ -33,9 +31,7 @@ public class MainActivity extends AppCompatActivity
 {
     private RecyclerView list;
     private ToernooiAdapter mToernooiAdapter;
-    private SpelerAdapter mSpelerAdapter;
     private List<Toernooi> mToernooien;
-    private List<Speler> mSpelers;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

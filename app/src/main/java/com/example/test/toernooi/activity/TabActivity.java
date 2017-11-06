@@ -33,8 +33,11 @@ public class TabActivity extends AppCompatActivity {
     private SpelerAdapter mSpelerAdapter;
     private List<Toernooi> mToernooien;
 
-    private SectionsPageAdapter mSectionsPagerAdapter;
+    private SectionsPageAdapter adapter;
     private ViewPager mViewPager;
+
+    private static final String TITLE_TOERNOOI_FRAGMENT = "TOERNOOI";
+    private static final String TITLE_SPELER_FRAGMENT = "SPELER";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,15 +47,15 @@ public class TabActivity extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        // Create the adapter that will return a fragment
-        // primary sections of the activity.
-        mSectionsPagerAdapter = new SectionsPageAdapter(getSupportFragmentManager());
+//        // Create the adapter that will return a fragment
+//        // primary sections of the activity.
+//        mSectionsPagerAdapter = new SectionsPageAdapter(getSupportFragmentManager());
 
         // Set up the ViewPager with the sections adapter.
         mViewPager = (ViewPager) findViewById(R.id.container);
         setUpViewPager(mViewPager);
 
-        TabLayout tabLayout = (TabLayout) findViewById(R.id.tabs);
+        final TabLayout tabLayout = (TabLayout) findViewById(R.id.tabs);
         tabLayout.setupWithViewPager(mViewPager);
 
 
@@ -61,16 +64,21 @@ public class TabActivity extends AppCompatActivity {
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(TabActivity.this, AddToernooiActivity.class);
-                startActivity(intent);
+                if (adapter.getPageTitle(tabLayout.getSelectedTabPosition()) == TITLE_TOERNOOI_FRAGMENT) {
+                    Intent intent = new Intent(TabActivity.this, AddToernooiActivity.class);
+                    startActivity(intent);
+                } else if (adapter.getPageTitle(tabLayout.getSelectedTabPosition()) == TITLE_SPELER_FRAGMENT){
+                    Intent intent = new Intent(TabActivity.this, AddSpelerActivity.class);
+                    startActivity(intent);
+                }
             }
         });
     }
 
     public void setUpViewPager(ViewPager viewpager) {
-        SectionsPageAdapter adapter = new SectionsPageAdapter(getSupportFragmentManager());
-        adapter.addFragment(new ToernooiFragment(), "TOERNOOI");
-        adapter.addFragment(new SpelerFragment(), "SPELER");
+        adapter = new SectionsPageAdapter(getSupportFragmentManager());
+        adapter.addFragment(new ToernooiFragment(), TITLE_TOERNOOI_FRAGMENT);
+        adapter.addFragment(new SpelerFragment(), TITLE_SPELER_FRAGMENT);
         viewpager.setAdapter(adapter);
     }
 

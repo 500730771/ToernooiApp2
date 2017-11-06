@@ -20,6 +20,9 @@
     <string name="toernooi_has_been_added">Toernooi has been added</string>
     <string name="toernooi_has_been_modified">Toernooi has been modified</string>
     <string name="toernooien_deleted">All toernooien deleted</string>
+    <string name="speler_has_been_added">Speler has been added</string>
+    <string name="speler_has_been_modified">Speler has been modified</string>
+    <string name="spelers_deleted">All Spelers deleted</string>
     <string name="title_screen_main">Toernooi Backlog Manager</string>
     <string name="title_screen_add">Add Toernooi</string>
     <string name="string_menu_delete_all">Delete All</string>
@@ -49,5 +52,7 @@
     <string name="tab_text_1">Tab 1</string>
     <string name="tab_text_2">Tab 2</string>
     <string name="tab_text_3">Tab 3</string>
+    <string name="title_activity_speler_details">SpelerDetailsActivity</string>
+    <string name="title_activity_modify_speler">ModifySpelerActivity</string>
 </resources>
 
