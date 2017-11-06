@@ -20,41 +20,48 @@ import java.util.List;
 
 public class ToernooiAdapter extends RecyclerView.Adapter<ToernooiAdapter.ViewHolder> {
     final Context context;
-    private final List<Toernooi> gameArrayList;
+    private final List<Toernooi> toernooiList;
 
     public ToernooiAdapter(List<Toernooi> list, Context context) {
-        gameArrayList = list;
+        toernooiList = list;
         this.context = context;
     }
 
     @Override
     public int getItemCount() {
-        return gameArrayList.size();
+        return toernooiList.size();
     }
     private Toernooi getItem(int position) {
-        return gameArrayList.get(position);
+        return toernooiList.get(position);
     }
+
     @Override
     public long getItemId(int position) {
-        return gameArrayList.get(position).getId();
+        return toernooiList.get(position).getId();
     }
     public void updateList(List<Toernooi> newlist) {
         // Set new updated list
-        gameArrayList.clear();
-        gameArrayList.addAll(newlist);
+        toernooiList.clear();
+        toernooiList.addAll(newlist);
     }
+
     @Override
-    public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+    public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType)
+    {
         View itemView = LayoutInflater.from(parent.getContext())
                 .inflate(R.layout.toernooi_item, parent, false);
         return new ViewHolder(itemView);
     }
+
     @Override
-    public void onBindViewHolder(ViewHolder holder, int position) {
+    public void onBindViewHolder(ViewHolder holder, int position)
+    {
         //Populate the row
         holder.populateRow(getItem(position));
     }
-    public class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
+
+    public class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener
+    {
         private final TextView mToernooiNaam;
         private final TextView mToernooiDatum;
         //initialize the variables

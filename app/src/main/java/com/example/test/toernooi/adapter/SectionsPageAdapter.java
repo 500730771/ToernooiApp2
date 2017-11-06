@@ -8,11 +8,11 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Created by Melanie on 16-10-2017.
+ * Created by Melanie on 5-11-2017.
  */
 
-public class SectionsPageAdapter extends FragmentPagerAdapter {
-
+public class SectionsPageAdapter extends FragmentPagerAdapter
+{
     private final List<Fragment> mFragmentList = new ArrayList<Fragment>();
     private final List<String> mFragmentTitleList = new ArrayList<String>();
 
@@ -33,7 +33,6 @@ public class SectionsPageAdapter extends FragmentPagerAdapter {
     public Fragment getItem(int position) {
         return mFragmentList.get(position);
     }
-
     @Override
     public int getCount() {
         return mFragmentList.size();
