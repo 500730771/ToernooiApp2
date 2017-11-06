@@ -1,4 +1,4 @@
-package com.example.test.toernooi.activity;
+package com.example.test.toernooi.activity.toernooi;
 
 import android.content.Context;
 import android.graphics.Color;

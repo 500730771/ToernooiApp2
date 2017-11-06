@@ -1,4 +1,4 @@
-package com.example.test.toernooi.activity;
+package com.example.test.toernooi.activity.speler;
 
 import android.app.DialogFragment;
 import android.content.Context;
@@ -106,8 +106,8 @@ public class ModifySpelerActivity extends AppCompatActivity implements ConfirmDe
             // Starting the previous Intent
             Intent previousActivity = new Intent(this, SpelerDetailsActivity.class);
             // Sending the data to SpelerDetailsActivity
-//            previousActivity.putExtra("speler", speler);
-            setResult(100, previousActivity);
+            previousActivity.putExtra("speler", speler);
+            setResult(1000, previousActivity);
             finish();
 //        }
     }
@@ -167,8 +167,8 @@ public class ModifySpelerActivity extends AppCompatActivity implements ConfirmDe
     public void onDialogPositiveClick(DialogFragment dialog) {
         Intent previousActivity = new Intent(this, SpelerDetailsActivity.class);
         //Sending the origional data to SpelerDetailActivity
-//        previousActivity.putExtra("speler", speler);
-        setResult(100, previousActivity);
+        previousActivity.putExtra("speler", speler);
+        setResult(1000, previousActivity);
         finish();
     }
 

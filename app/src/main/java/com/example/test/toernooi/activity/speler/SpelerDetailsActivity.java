@@ -1,4 +1,4 @@
-package com.example.test.toernooi.activity;
+package com.example.test.toernooi.activity.speler;
 
 import android.content.Context;
 import android.content.Intent;
@@ -34,7 +34,7 @@ public class SpelerDetailsActivity extends AppCompatActivity implements ConfirmD
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        this.speler = (Speler) getIntent().getSerializableExtra("selectedSpeler");
+        this.speler = (Speler) getIntent().getSerializableExtra("speler");
         setSpelerViews();
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
@@ -44,7 +44,7 @@ public class SpelerDetailsActivity extends AppCompatActivity implements ConfirmD
             public void onClick(View view)
             {
                 Intent intent = new Intent(SpelerDetailsActivity.this, ModifySpelerActivity.class);
-//                intent.putExtra("selectedSpeler", speler);
+                intent.putExtra("speler", speler);
                 startActivityForResult(intent, 1000);
             }
         });
@@ -55,7 +55,7 @@ public class SpelerDetailsActivity extends AppCompatActivity implements ConfirmD
     {
         super.onActivityResult(requestCode, resultCode, data);
         //Set the Speler Card with updated speler
-        speler = (Speler) data.getSerializableExtra("selectedSpeler");
+        speler = (Speler) data.getSerializableExtra("speler");
         setSpelerViews();
     }
 
@@ -69,11 +69,11 @@ public class SpelerDetailsActivity extends AppCompatActivity implements ConfirmD
         mSpelerCompetitie = (TextView) findViewById(R.id.spelerCompetite);
 
         mSpelerNaam.setText(speler.getNaam().toString());
-        mSpelerGeboortedatum.setText(speler.getGeboortedatum().toString());
-        mSpelerClub.setText(speler.getClub().toString());
-        mSpelerSoortlid.setText(speler.getSoortLid().toString());
-        mSpelerSpeelsterkte.setText(speler.getSpeelsterkte().toString());
-        mSpelerCompetitie.setText(speler.getCompetitie().toString());
+//        mSpelerGeboortedatum.setText(speler.getGeboortedatum().toString());
+//        mSpelerClub.setText(speler.getClub().toString());
+//        mSpelerSoortlid.setText(speler.getSoortLid().toString());
+//        mSpelerSpeelsterkte.setText(speler.getSpeelsterkte().toString());
+//        mSpelerCompetitie.setText(speler.getCompetitie().toString());
     }
 
     @Override

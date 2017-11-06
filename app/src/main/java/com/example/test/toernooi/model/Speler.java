@@ -1,10 +1,12 @@
 package com.example.test.toernooi.model;
 
+import java.io.Serializable;
+
 /**
  * Created by Melanie on 15-10-2017.
  */
 
-public class Speler {
+public class Speler implements Serializable{
     private int id;
     private String naam;
     private String geboortedatum;

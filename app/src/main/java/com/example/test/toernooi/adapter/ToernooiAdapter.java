@@ -13,7 +13,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.example.test.toernooi.R;
-import com.example.test.toernooi.activity.ToernooiDetailsActivity;
+import com.example.test.toernooi.activity.toernooi.ToernooiDetailsActivity;
 import com.example.test.toernooi.model.Toernooi;
 
 import java.util.List;

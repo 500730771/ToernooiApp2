@@ -1,4 +1,4 @@
-package com.example.test.toernooi.activity;
+package com.example.test.toernooi.activity.toernooi;
 
 import android.app.DialogFragment;
 import android.content.Context;

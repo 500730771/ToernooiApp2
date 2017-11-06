@@ -7,7 +7,6 @@ import android.provider.BaseColumns;
  */
 
 public class SpelerContract {
-
     private SpelerContract() {}
 
     /* Inner class that defines the table contents */

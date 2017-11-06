@@ -20,31 +20,27 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".activity.MainActivity"
-            android:label="@string/app_name"
-            android:theme="@style/AppTheme.NoActionBar" />
-        <activity
-            android:name=".activity.AddToernooiActivity"
+            android:name=".activity.toernooi.AddToernooiActivity"
             android:label="@string/title_activity_add_toernooi"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".activity.ToernooiDetailsActivity"
+            android:name=".activity.toernooi.ToernooiDetailsActivity"
             android:label="@string/title_activity_toernooi_details"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".activity.ModifyToernooiActivity"
+            android:name=".activity.toernooi.ModifyToernooiActivity"
             android:label="@string/title_activity_modify_toernooi"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".activity.AddSpelerActivity"
+            android:name=".activity.speler.AddSpelerActivity"
             android:label="@string/title_activity_add_speler"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".activity.SpelerDetailsActivity"
+            android:name=".activity.speler.SpelerDetailsActivity"
             android:label="@string/title_activity_speler_details"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".activity.ModifySpelerActivity"
+            android:name=".activity.speler.ModifySpelerActivity"
             android:label="@string/title_activity_modify_speler"
             android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>

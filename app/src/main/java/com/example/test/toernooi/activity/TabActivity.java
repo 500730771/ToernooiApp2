@@ -13,6 +13,8 @@ import android.view.MenuItem;
 import android.view.View;
 
 import com.example.test.toernooi.R;
+import com.example.test.toernooi.activity.speler.AddSpelerActivity;
+import com.example.test.toernooi.activity.toernooi.AddToernooiActivity;
 import com.example.test.toernooi.adapter.SectionsPageAdapter;
 import com.example.test.toernooi.adapter.SpelerAdapter;
 import com.example.test.toernooi.adapter.ToernooiAdapter;

@@ -9,7 +9,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.example.test.toernooi.R;
-import com.example.test.toernooi.activity.SpelerDetailsActivity;
+import com.example.test.toernooi.activity.speler.SpelerDetailsActivity;
 import com.example.test.toernooi.model.Speler;
 
 import java.util.List;
@@ -81,23 +81,25 @@ public class SpelerAdapter extends RecyclerView.Adapter<SpelerAdapter.ViewHolder
             view.setOnClickListener(this);
         }
 
+        /**
+         * Deze methode is als er op een speler wordt geklikt, wat gebeurt er dan.
+         * De details van de speler wordt laten zien in een nieuwe activity.
+         *
+         * @param view
+         */
         @Override
         public void onClick(View view) {
             Intent intent = new Intent(context, SpelerDetailsActivity.class);
-            // Get the correct toernooi based on which listitem got clicked, and put it as parameter in the intent
+            // Get the correct speler based on which listitem got clicked, and put it as parameter in the intent
             Speler selectedSpeler = getItem(getAdapterPosition());
-//            intent.putExtra("selectedSpeler", selectedSpeler);
-//             Open SpelerDetailsActivity
+            intent.putExtra("speler", selectedSpeler);
+            //Open SpelerDetailsActivity
             context.startActivity(intent);
         }
 
         public void populateRow(Speler speler) {
             mSpelerNaam.setText(speler.getNaam());
-//            mSpelerGeboortedatum.setText(speler.getGeboortedatum());
             mSpelerclub.setText(speler.getClub());
-//            mSpelerSoortlid.setText(speler.getSoortLid());
-//            mSpelerSpeelsterkte.setText(speler.getSpeelsterkte());
-//            mSpelerCompetitie.setText(speler.getCompetitie());
         }
     }
 }
