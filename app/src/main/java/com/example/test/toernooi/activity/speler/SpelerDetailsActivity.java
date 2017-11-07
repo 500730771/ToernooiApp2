@@ -101,6 +101,9 @@ public class SpelerDetailsActivity extends AppCompatActivity implements ConfirmD
         //Do nothing, Dialog will disappear
     }
 
+    /**
+     * Als de speler is verwijderd dat wordt deze toast message laten zien
+     */
     private void showSpelerDeletedToast()
     {
         Context context = getApplicationContext();
@@ -114,7 +117,7 @@ public class SpelerDetailsActivity extends AppCompatActivity implements ConfirmD
     public boolean onOptionsItemSelected(MenuItem item)
     {
         int id = item.getItemId();
-        if (id == R.id.action_delete_game)
+        if (id == R.id.action_delete)
         {
             // Show the ConfirmDeleteDialog
             android.app.DialogFragment dialog = new ConfirmDeleteDialog();

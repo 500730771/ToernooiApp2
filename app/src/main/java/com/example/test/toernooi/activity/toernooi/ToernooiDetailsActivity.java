@@ -109,7 +109,7 @@ public class ToernooiDetailsActivity extends AppCompatActivity
     public boolean onOptionsItemSelected(MenuItem item)
     {
         int id = item.getItemId();
-        if (id == R.id.action_delete_game)
+        if (id == R.id.action_delete)
         {
             // Show the ConfirmDeleteDialog
             android.app.DialogFragment dialog = new ConfirmDeleteDialog();
