@@ -32,6 +32,7 @@ public class AddSpelerActivity extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
+        //velden initialiseren
         mSpelerNaam = (EditText)findViewById(R.id.spelerNaam);
         mSpelerGeboortedatum = (EditText)findViewById(R.id.spelerGeboortedatum);
         mSpelerClub = (EditText)findViewById(R.id.spelerClub);
@@ -46,6 +47,9 @@ public class AddSpelerActivity extends AppCompatActivity {
         });
     }
 
+    /**
+     * Een speler wordt opgeslagen in de database en de velden worden gecontroleerd.
+     */
     void saveSpeler() {
         // Retrieve the input from the user
         String naam = mSpelerNaam.getText().toString();
@@ -77,6 +81,13 @@ public class AddSpelerActivity extends AppCompatActivity {
 //        }
     }
 
+    /**
+     * Velden controleren
+     * @param text de text die uit de content komt
+     * @param tekstveld
+     * @param message de message die moet worden laten zien als er een foutmelding moet worden weergeven
+     * @return true of false voor een foutmelding
+     */
     private boolean ControleerVerplichteVelden(EditText text, String tekstveld, String message){
         if (text != null && tekstveld.isEmpty()) {
             AddSpelerActivity.setErrorText(text, message);
@@ -87,6 +98,10 @@ public class AddSpelerActivity extends AppCompatActivity {
         }
     }
 
+    /**
+     * message die moet worden laten zien in een toast
+     * @param message
+     */
     private void showToast(String message) {
         Context context = getApplicationContext();
         int duration = Toast.LENGTH_SHORT;
