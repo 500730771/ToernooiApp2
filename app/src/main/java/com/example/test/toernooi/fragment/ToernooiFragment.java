@@ -2,7 +2,6 @@ package com.example.test.toernooi.fragment;
 
 import android.content.Context;
 import android.os.Bundle;
-import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
@@ -26,9 +25,7 @@ import java.util.List;
  */
 
 public class ToernooiFragment extends Fragment {
-    private static final String TITLE = "TABTOERNOOIFRAGMENT";
     private static final String TAG = "RecyclerViewFragment";
-    private static final String KEY_LAYOUT_MANAGER = "layoutManager";
 
     private RecyclerView list;
     private ToernooiAdapter mToernooiAdapter;
@@ -36,11 +33,6 @@ public class ToernooiFragment extends Fragment {
 
     public ToernooiFragment() {
         // Required empty public constructor
-    }
-
-    public View onCreate(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_toernooi, container, false);
-        return view;
     }
 
     @Override
@@ -96,7 +88,7 @@ public class ToernooiFragment extends Fragment {
                 // Display toast with Feedback
                 //showToast(getString(R.string.swipe_delete));
                 Context context = getActivity();
-                String text = String.format(getString(R.string.swipe_delete));
+                String text = String.format(getString(R.string.toernooi_swipe_delete));
                 int duration = Toast.LENGTH_SHORT;
                 Toast toast = Toast.makeText(context, text, duration);
                 toast.show();

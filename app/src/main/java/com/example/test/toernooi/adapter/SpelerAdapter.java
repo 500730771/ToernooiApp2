@@ -63,21 +63,13 @@ public class SpelerAdapter extends RecyclerView.Adapter<SpelerAdapter.ViewHolder
     public class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener
     {
         private final TextView mSpelerNaam;
-//        private final TextView mSpelerGeboortedatum;
         private final TextView mSpelerclub;
-//        private final TextView mSpelerSoortlid;
-//        private final TextView mSpelerSpeelsterkte;
-//        private final TextView mSpelerCompetitie;
 
         //initialize the variables
         public ViewHolder(View view) {
             super(view);
             mSpelerNaam = (TextView) view.findViewById(R.id.spelerNaam);
-//            mSpelerGeboortedatum = (TextView) view.findViewById(R.id.spelerGeboortedatum);
             mSpelerclub = (TextView) view.findViewById(R.id.spelerClub);
-//            mSpelerSoortlid = (TextView) view.findViewById(R.id.spelerSoortLid);
-//            mSpelerSpeelsterkte = (TextView) view.findViewById(R.id.spelerSpeelsterkte);
-//            mSpelerCompetitie = (TextView) view.findViewById(R.id.spelerCompetite);
             view.setOnClickListener(this);
         }
 
@@ -90,10 +82,8 @@ public class SpelerAdapter extends RecyclerView.Adapter<SpelerAdapter.ViewHolder
         @Override
         public void onClick(View view) {
             Intent intent = new Intent(context, SpelerDetailsActivity.class);
-            // Get the correct speler based on which listitem got clicked, and put it as parameter in the intent
             Speler selectedSpeler = getItem(getAdapterPosition());
-            intent.putExtra("speler", selectedSpeler);
-            //Open SpelerDetailsActivity
+            intent.putExtra("selectedSpeler", selectedSpeler);
             context.startActivity(intent);
         }
 

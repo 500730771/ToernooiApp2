@@ -62,7 +62,6 @@ public class ConfirmDeleteDialog extends DialogFragment {
 
     public interface ConfirmDeleteDialogListener {
         void onDialogPositiveClick(DialogFragment dialog);
-
         void onDialogNegativeClick(DialogFragment dialog);
     }
 }

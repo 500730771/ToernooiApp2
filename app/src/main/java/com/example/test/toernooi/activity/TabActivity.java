@@ -49,10 +49,6 @@ public class TabActivity extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-//        // Create the adapter that will return a fragment
-//        // primary sections of the activity.
-//        mSectionsPagerAdapter = new SectionsPageAdapter(getSupportFragmentManager());
-
         // Set up the ViewPager with the sections adapter.
         mViewPager = (ViewPager) findViewById(R.id.container);
         setUpViewPager(mViewPager);
@@ -60,8 +56,7 @@ public class TabActivity extends AppCompatActivity {
         final TabLayout tabLayout = (TabLayout) findViewById(R.id.tabs);
         tabLayout.setupWithViewPager(mViewPager);
 
-
-
+        //floating action button. Voor ander tabblad moet de button een andere pagina openenen.
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override

@@ -34,7 +34,7 @@ public class SpelerDetailsActivity extends AppCompatActivity implements ConfirmD
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        this.speler = (Speler) getIntent().getSerializableExtra("speler");
+        this.speler = (Speler) getIntent().getSerializableExtra("selectedSpeler");
         setSpelerViews();
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
@@ -44,7 +44,7 @@ public class SpelerDetailsActivity extends AppCompatActivity implements ConfirmD
             public void onClick(View view)
             {
                 Intent intent = new Intent(SpelerDetailsActivity.this, ModifySpelerActivity.class);
-                intent.putExtra("speler", speler);
+                intent.putExtra("selectedSpeler", speler);
                 startActivityForResult(intent, 1000);
             }
         });
@@ -55,7 +55,7 @@ public class SpelerDetailsActivity extends AppCompatActivity implements ConfirmD
     {
         super.onActivityResult(requestCode, resultCode, data);
         //Set the Speler Card with updated speler
-        speler = (Speler) data.getSerializableExtra("speler");
+        speler = (Speler) data.getSerializableExtra("selectedSpeler");
         setSpelerViews();
     }
 

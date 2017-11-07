@@ -7,6 +7,8 @@ import java.io.Serializable;
  */
 
 public class Speler implements Serializable{
+
+    //eigenschappen van een speler
     private int id;
     private String naam;
     private String geboortedatum;
@@ -15,6 +17,7 @@ public class Speler implements Serializable{
     private String speelsterkte;
     private String competitie;
 
+    //maakt een speler aan
     public Speler(int id, String naam, String geboortedatum, String club, String soortLid, String speelsterkte, String competitie) {
         this.id = id;
         this.naam = naam;
@@ -29,6 +32,7 @@ public class Speler implements Serializable{
 
     }
 
+    //getters en setters
     public int getId() {
         return id;
     }

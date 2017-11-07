@@ -106,7 +106,7 @@ public class ModifySpelerActivity extends AppCompatActivity implements ConfirmDe
             // Starting the previous Intent
             Intent previousActivity = new Intent(this, SpelerDetailsActivity.class);
             // Sending the data to SpelerDetailsActivity
-            previousActivity.putExtra("speler", speler);
+            previousActivity.putExtra("selectedSpeler", speler);
             setResult(1000, previousActivity);
             finish();
 //        }
@@ -167,7 +167,7 @@ public class ModifySpelerActivity extends AppCompatActivity implements ConfirmDe
     public void onDialogPositiveClick(DialogFragment dialog) {
         Intent previousActivity = new Intent(this, SpelerDetailsActivity.class);
         //Sending the origional data to SpelerDetailActivity
-        previousActivity.putExtra("speler", speler);
+        previousActivity.putExtra("selectedSpeler", speler);
         setResult(1000, previousActivity);
         finish();
     }

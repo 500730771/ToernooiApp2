@@ -36,7 +36,6 @@ public class DataSource {
             SpelerContract.SpelerEntry.COLUMN_NAME_SPEELSTERKTE,
             SpelerContract.SpelerEntry.COLUMN_NAME_GEBOORTEDATUM};
 
-
     public DataSource(Context context) {
         mDBHelper = new DBHelper(context);
     }
@@ -49,7 +48,12 @@ public class DataSource {
         mDBHelper.close();
     }
 
+
     //TOERNOOI
+    /**
+     * Hier wordt er een toernooi opgeslagen in de database
+     * @param toernooi = het toernooi dat moet worden opgeslagen
+     */
     public void saveToernooi(Toernooi toernooi) {
         // Open connection to write data
         open();
@@ -61,6 +65,10 @@ public class DataSource {
         close(); // Closing database connection
     }
 
+    /**
+     * Hier wordt er een toernooi geupdated
+     * @param toernooi = het toernooi dat moet worden bewerkt/geupdated
+     */
     public void modifyToernooi(Toernooi toernooi) {
         open();
         ContentValues values = new ContentValues();
@@ -71,10 +79,10 @@ public class DataSource {
         mDatabase.close(); // Closing database connection
     }
 
-    public Cursor getAllToernooien() {
-        return mDatabase.query(ToernooiContract.ToernooiEntry.TABLE_NAME, TOERNOOI_ALL_COLUMNS, null, null, null, null, null);
-    }
-
+    /**
+     * Haalt alle toernooien op uit de database
+     * @return alle toernooien die bestaan in de datbase
+     */
     public List<Toernooi> getToernooien()
     {
         mDatabase = mDBHelper.getReadableDatabase();
@@ -102,6 +110,10 @@ public class DataSource {
         return toernooiList;
     }
 
+    /**
+     * Er wordt een bepaald toernooi verwijderd
+     * @param user_Id = het id van het toernooi dat moet worden verwijderd.
+     */
     public void deleteToernooi(long user_Id) {
         open();
         // It's a good practice to use parameter ?, instead of concatenate string
@@ -110,6 +122,9 @@ public class DataSource {
         close(); // Closing database connection
     }
 
+    /**
+     * Alle toernooien worden verwijderd.
+     */
     public void deleteAllToernooien()
     {
         open();
@@ -118,6 +133,11 @@ public class DataSource {
     }
 
     //SPELER
+
+    /**
+     * Als er een speler wordt opgeslagen in de database wordt deze methode aangeroepen
+     * @param speler = de speler die moet worden opgeslagen
+     */
     public void saveSpeler(Speler speler) {
         // Open connection to write data
         open();
@@ -133,6 +153,10 @@ public class DataSource {
         close(); // Closing database connection
     }
 
+    /**
+     * Een speler bewerken
+     * @param speler = de speler die moet worden bewerkt, geupdated
+     */
     public void modifySpeler(Speler speler) {
         open();
         ContentValues values = new ContentValues();
@@ -147,10 +171,10 @@ public class DataSource {
         mDatabase.close(); // Closing database connection
     }
 
-    public Cursor getAllSpelers() {
-        return mDatabase.query(SpelerContract.SpelerEntry.TABLE_NAME, SPELER_ALL_COLUMNS, null, null, null, null, null);
-    }
-
+    /**
+     * Een lijst van alle spelers ophalen
+     * @return een lijst van alle spelers
+     */
     public List<Speler> getSpelers()
     {
         mDatabase = mDBHelper.getReadableDatabase();
@@ -187,6 +211,10 @@ public class DataSource {
         return spelerlist;
     }
 
+    /**
+     * Een bepaalde speler verwijderen
+     * @param user_Id = het id van de speler die wordt verwijderd.
+     */
     public void deleteSpeler(long user_Id) {
         open();
         // It's a good practice to use parameter ?, instead of concatenate string
@@ -195,6 +223,9 @@ public class DataSource {
         close(); // Closing database connection
     }
 
+    /**
+     *  Alle spelers verwijderen
+     */
     public void deleteAllSpelers()
     {
         open();

@@ -25,10 +25,7 @@ import java.util.List;
  * A simple {@link Fragment} subclass.
  */
 public class SpelerFragment extends Fragment {
-
-    private static final String TITLE = "TABSPELERFRAGMENT";
     private static final String TAG = "RecyclerViewFragment";
-    private static final String KEY_LAYOUT_MANAGER = "layoutManager";
 
     private RecyclerView list;
     private SpelerAdapter mSpelerAdapter;
@@ -96,7 +93,7 @@ public class SpelerFragment extends Fragment {
                 // Display toast with Feedback
                 //showToast(getString(R.string.swipe_delete));
                 Context context = getActivity();
-                String text = String.format("Speler deleted");
+                String text = String.format(getString(R.string.speler_swipe_delete));
                 int duration = Toast.LENGTH_SHORT;
                 Toast toast = Toast.makeText(context, text, duration);
                 toast.show();
@@ -115,7 +112,7 @@ public class SpelerFragment extends Fragment {
 
     private void updateUI() {
         DataSource dataSource = new DataSource(getActivity());
-        // Get the list of games from Database
+        // Get the list of spelers from Database
         mSpelers = dataSource.getSpelers();
         if (mSpelerAdapter == null) {
             mSpelerAdapter = new SpelerAdapter(mSpelers, getActivity());
