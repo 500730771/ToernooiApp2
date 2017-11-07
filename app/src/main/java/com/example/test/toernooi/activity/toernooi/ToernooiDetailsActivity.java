@@ -115,7 +115,7 @@ public class ToernooiDetailsActivity extends AppCompatActivity
             android.app.DialogFragment dialog = new ConfirmDeleteDialog();
             Bundle bundle = new Bundle();
             bundle.putString("message", getString(R.string.dialog_toernooi_deletion_single));
-            bundle.putString("positiveButton", getString(R.string.dialog_toernooi_deletion_positive));
+            bundle.putString("positiveButton", getString(R.string.dialog_deletion_positive));
             dialog.setArguments(bundle);
             dialog.show(getFragmentManager(), "ConfirmDeleteDialog");
         }

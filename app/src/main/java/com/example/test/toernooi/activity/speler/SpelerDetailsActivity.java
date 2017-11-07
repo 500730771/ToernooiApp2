@@ -68,7 +68,7 @@ public class SpelerDetailsActivity extends AppCompatActivity implements ConfirmD
         mSpelerSpeelsterkte = (TextView) findViewById(R.id.spelerSpeelsterkte);
         mSpelerCompetitie = (TextView) findViewById(R.id.spelerCompetite);
 
-        mSpelerNaam.setText(speler.getNaam().toString());
+//        mSpelerNaam.setText(speler.getNaam().toString());
 //        mSpelerGeboortedatum.setText(speler.getGeboortedatum().toString());
 //        mSpelerClub.setText(speler.getClub().toString());
 //        mSpelerSoortlid.setText(speler.getSoortLid().toString());
@@ -120,7 +120,7 @@ public class SpelerDetailsActivity extends AppCompatActivity implements ConfirmD
             android.app.DialogFragment dialog = new ConfirmDeleteDialog();
             Bundle bundle = new Bundle();
             bundle.putString("message", getString(R.string.dialog_toernooi_deletion_single));
-            bundle.putString("positiveButton", getString(R.string.dialog_toernooi_deletion_positive));
+            bundle.putString("positiveButton", getString(R.string.dialog_deletion_positive));
             dialog.setArguments(bundle);
             dialog.show(getFragmentManager(), "ConfirmDeleteDialog");
         }

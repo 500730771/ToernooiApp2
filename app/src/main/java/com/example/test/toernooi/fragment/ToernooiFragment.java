@@ -107,7 +107,7 @@ public class ToernooiFragment extends Fragment {
         updateUI();
     }
 
-    private void updateUI() {
+    public void updateUI() {
         DataSource dataSource = new DataSource(getActivity());
         // Get the list of games from Database
         mToernooien = dataSource.getToernooien();

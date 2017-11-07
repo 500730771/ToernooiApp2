@@ -110,7 +110,7 @@ public class SpelerFragment extends Fragment {
         updateUI();
     }
 
-    private void updateUI() {
+    public void updateUI() {
         DataSource dataSource = new DataSource(getActivity());
         // Get the list of spelers from Database
         mSpelers = dataSource.getSpelers();
