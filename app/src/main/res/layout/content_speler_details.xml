@@ -27,7 +27,7 @@
             android:layout_margin="10dp">
 
             <TextView
-                android:id="@+id/SpelerNaam"
+                android:id="@+id/spelerNaamDetails"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Naam"
@@ -47,7 +47,7 @@
                     android:text="Geboortedatum" />
 
                 <TextView
-                    android:id="@+id/SpelerGeboortedatum"
+                    android:id="@+id/spelerGeboortedatumDetails"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -68,7 +68,7 @@
                     android:text="Club" />
 
                 <TextView
-                    android:id="@+id/SpelerClub"
+                    android:id="@+id/SpelerClubDetails"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -89,7 +89,7 @@
                     android:text="Soort Lid" />
 
                 <TextView
-                    android:id="@+id/SpelerSoortLid"
+                    android:id="@+id/SpelerSoortLidDetails"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -110,7 +110,7 @@
                     android:text="Speelsterkte" />
 
                 <TextView
-                    android:id="@+id/spelerSpeelsterkte"
+                    android:id="@+id/spelerSpeelsterkteDetails"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -131,7 +131,7 @@
                     android:text="Competitie" />
 
                 <TextView
-                    android:id="@+id/SpelerCompetitie"
+                    android:id="@+id/SpelerCompetitieDetails"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"

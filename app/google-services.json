@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "57672564356",
+    "firebase_url": "https://testproject1-1b168.firebaseio.com",
+    "project_id": "testproject1-1b168",
+    "storage_bucket": "testproject1-1b168.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:57672564356:android:1666d357c5ef485d",
+        "android_client_info": {
+          "package_name": "com.example.test.toernooi"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "57672564356-5b8jn8kj09ge8853iirrdv55cqivdn16.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.test.toernooi",
+            "certificate_hash": "63da04d132db8d00ab9b5151a6c46a197055356b"
+          }
+        },
+        {
+          "client_id": "57672564356-h8bifokauam2pee9ooh9mpepohl67fa8.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDmo3_5DyebaGR-56VJWzDca9jY1bz9dhA"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "57672564356-h8bifokauam2pee9ooh9mpepohl67fa8.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

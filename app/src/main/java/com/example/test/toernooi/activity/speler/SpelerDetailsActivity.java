@@ -61,19 +61,19 @@ public class SpelerDetailsActivity extends AppCompatActivity implements ConfirmD
 
 
     public void setSpelerViews() {
-        mSpelerNaam = (TextView) findViewById(R.id.spelerNaam);
-        mSpelerGeboortedatum = (TextView) findViewById(R.id.spelerGeboortedatum);
-        mSpelerClub = (TextView) findViewById(R.id.spelerClub);
-        mSpelerSoortlid = (TextView) findViewById(R.id.spelerSoortLid);
-        mSpelerSpeelsterkte = (TextView) findViewById(R.id.spelerSpeelsterkte);
-        mSpelerCompetitie = (TextView) findViewById(R.id.spelerCompetite);
+        mSpelerNaam = (TextView) findViewById(R.id.spelerNaamDetails);
+        mSpelerGeboortedatum = (TextView) findViewById(R.id.spelerGeboortedatumDetails);
+        mSpelerClub = (TextView) findViewById(R.id.SpelerClubDetails);
+        mSpelerSoortlid = (TextView) findViewById(R.id.SpelerSoortLidDetails);
+        mSpelerSpeelsterkte = (TextView) findViewById(R.id.spelerSpeelsterkteDetails);
+        mSpelerCompetitie = (TextView) findViewById(R.id.SpelerCompetitieDetails);
 
-//        mSpelerNaam.setText(speler.getNaam().toString());
-//        mSpelerGeboortedatum.setText(speler.getGeboortedatum().toString());
-//        mSpelerClub.setText(speler.getClub().toString());
-//        mSpelerSoortlid.setText(speler.getSoortLid().toString());
-//        mSpelerSpeelsterkte.setText(speler.getSpeelsterkte().toString());
-//        mSpelerCompetitie.setText(speler.getCompetitie().toString());
+        mSpelerNaam.setText(speler.getNaam().toString());
+        mSpelerGeboortedatum.setText(speler.getGeboortedatum().toString());
+        mSpelerClub.setText(speler.getClub().toString());
+        mSpelerSoortlid.setText(speler.getSoortLid().toString());
+        mSpelerSpeelsterkte.setText(speler.getSpeelsterkte().toString());
+        mSpelerCompetitie.setText(speler.getCompetitie().toString());
     }
 
     @Override
