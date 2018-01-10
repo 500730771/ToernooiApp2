@@ -8,7 +8,6 @@ import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.TabLayout;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -19,33 +18,21 @@ import com.example.test.toernooi.R;
 import com.example.test.toernooi.activity.speler.AddSpelerActivity;
 import com.example.test.toernooi.activity.toernooi.AddToernooiActivity;
 import com.example.test.toernooi.adapter.SectionsPageAdapter;
-import com.example.test.toernooi.adapter.SpelerAdapter;
-import com.example.test.toernooi.adapter.ToernooiAdapter;
 import com.example.test.toernooi.data.DataSource;
+import com.example.test.toernooi.fragment.SensorFragment;
 import com.example.test.toernooi.fragment.SpelerFragment;
 import com.example.test.toernooi.fragment.ToernooiFragment;
-import com.example.test.toernooi.model.Toernooi;
 import com.example.test.toernooi.utility.ConfirmDeleteDialog;
 import com.facebook.stetho.Stetho;
 
-import java.util.List;
-
 public class TabActivity extends AppCompatActivity implements ConfirmDeleteDialog.ConfirmDeleteDialogListener {
-
-    private View toernooitab;
-    private View spelertab;
-
-    private RecyclerView list;
-    private ToernooiAdapter mToernooiAdapter;
-    private SpelerAdapter mSpelerAdapter;
-    private List<Toernooi> mToernooien;
-
     private SectionsPageAdapter adapter;
     private ViewPager mViewPager;
     private TabLayout tabLayout;
 
     private static final String TITLE_TOERNOOI_FRAGMENT = "TOERNOOI";
     private static final String TITLE_SPELER_FRAGMENT = "SPELER";
+    private static final String TITLE_SENSOR_FRAGMENT = "SENSOR";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -82,6 +69,7 @@ public class TabActivity extends AppCompatActivity implements ConfirmDeleteDialo
         adapter = new SectionsPageAdapter(getSupportFragmentManager());
         adapter.addFragment(new ToernooiFragment(), TITLE_TOERNOOI_FRAGMENT);
         adapter.addFragment(new SpelerFragment(), TITLE_SPELER_FRAGMENT);
+        adapter.addFragment(new SensorFragment(), TITLE_SENSOR_FRAGMENT);
         viewpager.setAdapter(adapter);
     }
 
